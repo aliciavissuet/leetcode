@@ -18,7 +18,7 @@ class myStack:
         sorted_stack = myStack()
         while len(self.stack > 0):
             temp = self.stack.pop()
-            while len(sorted_stack) > 0 and sorted_stack[-1] > temp:
+            while len(sorted_stack.stack) > 0 and sorted_stack.peek() > temp:
                 self.stack.append(sorted_stack.pop())
-            sorted_stack.append(temp)
+            sorted_stack.add(temp)
         self.stack = sorted_stack
