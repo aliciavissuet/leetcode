@@ -1,8 +1,14 @@
+from collections import defaultdict
 def word_ladder(start, end, word_list):
     word_dict = defaultdict(int)
     for word in word_list:
         word_dict[word] = 1
-    return word_ladder_helper(start, end, word_dict, 0)
+    if word_dict[end] == 0:
+        return 0
+    result =  word_ladder_helper(start, end, word_dict, 0)
+    if result == None:
+        return 0
+    return result
 
 
 def word_ladder_helper(start, end, word_dict, count):
